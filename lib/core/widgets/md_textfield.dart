@@ -97,9 +97,19 @@ class MdTextFormField extends StatelessWidget {
                     const SizedBox(width: 8),
                     Text(
                       field.errorText ?? '',
-                      style: TextStyle(
-                        color: context.theme.errorColor,
-                      ),
+                      style: context.theme.inputDecorationTheme.errorStyle,
+                    ),
+                  ],
+                ),
+              ),
+            if (!field.hasError && helperText != null && helperText!.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(right: 4, top: 4),
+                child: Row(
+                  children: [
+                    Text(
+                      helperText ?? '',
+                      style: context.theme.inputDecorationTheme.helperStyle,
                     ),
                   ],
                 ),

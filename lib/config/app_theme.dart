@@ -24,6 +24,10 @@ class AppTheme {
           color: ColorManager.instance.grayColor.withOpacity(1),
           fontSize: 16,
         ),
+        errorStyle: TextStyle(
+          color: ColorManager.instance.redColor,
+          fontSize: 16,
+        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5),
           borderSide: BorderSide(

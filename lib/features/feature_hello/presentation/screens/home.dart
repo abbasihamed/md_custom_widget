@@ -27,7 +27,16 @@ class _HomeState extends State<Home> {
                 child: MdTextFormField(
                   controller: controller,
                   labelText: "کد ملی",
-                  validator: (value) {},
+                  helperText: 'متن کمکی',
+                  validator: (value) {
+                    if (value != null) {
+                      if (value.isNotEmpty) {
+                        return null;
+                      }
+                      return 'خالی';
+                    }
+                    return 'خالی';
+                  },
                 ),
               ),
               const SizedBox(height: 20),
