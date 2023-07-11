@@ -5,6 +5,9 @@ import 'package:middle_east/config/app_theme.dart';
 import 'package:middle_east/core/widgets/main_wrapper.dart';
 import 'package:middle_east/features/feature_hello/presentation/bloc/hello/hello_bloc.dart';
 import 'package:middle_east/features/feature_hello/presentation/screens/home.dart';
+import 'package:middle_east/features/login/presentation/screens/auth_id_phone_page.dart';
+import 'package:middle_east/features/login/presentation/screens/auth_otp_page.dart';
+import 'package:middle_east/features/login/presentation/screens/login_mode_page.dart';
 import 'package:middle_east/locator.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:url_strategy/url_strategy.dart';
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       home: const Directionality(
         textDirection: TextDirection.rtl,
-        child: Home(),
+        child: LoginModePage(),
       ),
     );
   }

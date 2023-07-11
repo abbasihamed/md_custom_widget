@@ -11,6 +11,10 @@ class AppTheme {
       textSelectionTheme: TextSelectionThemeData(
         cursorColor: ColorManager.instance.blackColor,
       ),
+      appBarTheme: AppBarTheme(
+        backgroundColor: ColorManager.instance.yellowColor,
+        centerTitle: true,
+      ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: ColorManager.instance.grayColor.withOpacity(.04),
@@ -54,6 +58,20 @@ class AppTheme {
             color: ColorManager.instance.redColor,
             width: 2,
           ),
+        ),
+      ),
+      textTheme: TextTheme(
+        headline2: TextStyle(
+          color: ColorManager.instance.whiteColor,
+          fontSize: 23,
+          fontStyle: FontStyle.normal,
+          fontWeight: FontWeight.w600,
+        ),
+        subtitle1: const TextStyle(
+          color: Color(0xFF344563),
+          fontSize: 14,
+          fontStyle: FontStyle.normal,
+          fontWeight: FontWeight.w300,
         ),
       ),
     );
