@@ -89,34 +89,91 @@ class MdTextFormField extends StatelessWidget {
               textInputAction: textInputAction,
             ),
             if (field.hasError)
-              Padding(
-                padding: const EdgeInsets.only(right: 4, top: 4),
-                child: Row(
-                  children: [
-                    SvgPicture.asset('images/error.svg'),
-                    const SizedBox(width: 8),
-                    Text(
-                      field.errorText ?? '',
-                      style: context.theme.inputDecorationTheme.errorStyle,
-                    ),
-                  ],
-                ),
+              TextFieldBelowTextAnim(
+                text: field.errorText ?? '',
+                isError: true,
+                style: context.theme.inputDecorationTheme.errorStyle,
               ),
             if (!field.hasError && helperText != null && helperText!.isNotEmpty)
-              Padding(
-                padding: const EdgeInsets.only(right: 4, top: 4),
-                child: Row(
-                  children: [
-                    Text(
-                      helperText ?? '',
-                      style: context.theme.inputDecorationTheme.helperStyle,
-                    ),
-                  ],
-                ),
-              ),
+              TextFieldBelowTextAnim(
+                text: helperText ?? '',
+                isError: false,
+                style: context.theme.inputDecorationTheme.helperStyle,
+              )
           ],
         );
       },
+    );
+  }
+}
+
+class TextFieldBelowTextAnim extends StatefulWidget {
+  final String text;
+  final bool isError;
+  final TextStyle? style;
+
+  const TextFieldBelowTextAnim({
+    super.key,
+    required this.text,
+    this.style,
+    required this.isError,
+  });
+
+  @override
+  State<TextFieldBelowTextAnim> createState() => _TextFieldBelowTextAnimState();
+}
+
+class _TextFieldBelowTextAnimState extends State<TextFieldBelowTextAnim>
+    with SingleTickerProviderStateMixin {
+  late AnimationController animation;
+  late Animation<double> _fadeInFadeOut;
+  @override
+  void initState() {
+    super.initState();
+    animation = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 300),
+    );
+    _fadeInFadeOut = Tween<double>(begin: 0.0, end: 1.0).animate(animation);
+    animation.forward();
+  }
+
+  @override
+  void didUpdateWidget(covariant TextFieldBelowTextAnim oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    animation.reset();
+    animation.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animation.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeTransition(
+      opacity: _fadeInFadeOut,
+      child: Padding(
+        padding: const EdgeInsets.only(right: 4, top: 4),
+        child: Row(
+          children: [
+            if (widget.isError)
+              Padding(
+                padding: const EdgeInsets.only(left: 4),
+                child: SvgPicture.asset('images/error.svg'),
+              ),
+            Expanded(
+              child: Text(
+                widget.text,
+                style: widget.style,
+                overflow: TextOverflow.visible,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
