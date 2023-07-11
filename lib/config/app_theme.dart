@@ -7,6 +7,7 @@ class AppTheme {
       primaryColor: ColorManager.instance.yellowColor,
       backgroundColor: ColorManager.instance.whiteColor,
       errorColor: ColorManager.instance.redColor,
+      fontFamily: 'iransans-num',
       textSelectionTheme: TextSelectionThemeData(
         cursorColor: ColorManager.instance.blackColor,
       ),
@@ -15,14 +16,19 @@ class AppTheme {
         fillColor: ColorManager.instance.grayColor.withOpacity(.04),
         floatingLabelStyle: TextStyle(
           color: ColorManager.instance.blueColor,
-          fontSize: 20,
+          fontSize: 16,
+          fontStyle: FontStyle.normal,
         ),
         labelStyle: TextStyle(
           color: ColorManager.instance.grayColor.withOpacity(.7),
+          fontSize: 16,
+          fontStyle: FontStyle.normal,
         ),
         helperStyle: TextStyle(
           color: ColorManager.instance.grayColor.withOpacity(1),
-          fontSize: 16,
+          fontSize: 14,
+          fontStyle: FontStyle.normal,
+          fontWeight: FontWeight.w400,
         ),
         errorStyle: TextStyle(
           color: ColorManager.instance.redColor,

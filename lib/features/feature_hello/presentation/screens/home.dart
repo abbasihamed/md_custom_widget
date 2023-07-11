@@ -40,6 +40,24 @@ class _HomeState extends State<Home> {
                 ),
               ),
               const SizedBox(height: 20),
+              SizedBox(
+                width: 300,
+                child: MdTextFormField(
+                  controller: controller,
+                  labelText: "کد ملی",
+                  helperText: 'متن کمکی',
+                ),
+              ),
+              const SizedBox(height: 40),
+              SizedBox(
+                width: 300,
+                child: MdTextFormField(
+                  controller: controller,
+                  labelText: "کد ملی",
+                  helperText: 'متن کمکی',
+                ),
+              ),
+              const SizedBox(height: 20),
               MdOtpField(
                 onSubmit: (String verificationCode) {},
               ),

@@ -54,7 +54,8 @@ class MdTextFormField extends StatelessWidget {
               style: style ??
                   TextStyle(
                     color: ColorManager.instance.blackColor,
-                    fontSize: 20,
+                    fontSize: 18,
+                    fontStyle: FontStyle.normal,
                   ),
               decoration: InputDecoration(
                 labelText: labelText,
