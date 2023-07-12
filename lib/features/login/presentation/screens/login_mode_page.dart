@@ -36,7 +36,7 @@ class LoginModePage extends StatelessWidget {
                 const SizedBox(height: 14),
                 InfoButton(
                   onPress: () {
-                    context.push('/login_phone_id');
+                    context.go('/login_phone_id');
                   },
                   title: 'شماره موبایل و کد ملی',
                   caption: "امکان استفاده از خدمات بانکت",

@@ -88,7 +88,7 @@ class _AuthPhoneIdPageState extends State<AuthPhoneIdPage> {
                   child: PrimaryButton(
                     onPress: () {
                       if (formKey.currentState!.validate()) {
-                        context.go('/opt_code');
+                        context.go('/login_phone_id/opt_code');
                       }
                     },
                     title: 'تایید',

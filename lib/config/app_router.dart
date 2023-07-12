@@ -10,14 +10,18 @@ class AppRouter {
       GoRoute(
         path: '/',
         builder: (context, state) => const LoginModePage(),
-      ),
-      GoRoute(
-        path: '/login_phone_id',
-        builder: (context, state) => const AuthPhoneIdPage(),
-      ),
-      GoRoute(
-        path: '/opt_code',
-        builder: (context, state) => const AuthOtpPage(),
+        routes: [
+          GoRoute(
+            path: 'login_phone_id',
+            builder: (context, state) => const AuthPhoneIdPage(),
+            routes: [
+              GoRoute(
+                path: 'opt_code',
+                builder: (context, state) => const AuthOtpPage(),
+              ),
+            ],
+          ),
+        ],
       ),
     ],
   );

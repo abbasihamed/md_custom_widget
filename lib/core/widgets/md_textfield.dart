@@ -142,7 +142,9 @@ class _TextFieldBelowTextAnimState extends State<TextFieldBelowTextAnim>
   @override
   void didUpdateWidget(covariant TextFieldBelowTextAnim oldWidget) {
     super.didUpdateWidget(oldWidget);
-    animation.reset();
+    if (oldWidget.text != widget.text) {
+      animation.reset();
+    }
     animation.forward();
   }
 
