@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:middle_east/core/utils/extension.dart';
+import 'package:middle_east/core/widgets/app_message.dart';
 import 'package:middle_east/core/widgets/md_app_bar.dart';
 import 'package:middle_east/core/widgets/md_otp_textfield.dart';
 import 'package:middle_east/core/widgets/primary_button.dart';
@@ -47,7 +48,10 @@ class AuthOtpPage extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: PrimaryButton(
-                    onPress: () {},
+                    onPress: () {
+                      AppMessage.showErrorMessage(
+                          context, 'کد وارد شده اشتباه است');
+                    },
                     title: 'تایید',
                     isActive: true,
                   ),

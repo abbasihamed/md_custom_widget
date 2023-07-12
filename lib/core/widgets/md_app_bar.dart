@@ -14,6 +14,7 @@ class MdCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       child: AppBar(
         toolbarHeight: 300,
+        automaticallyImplyLeading: false,
         title: Column(
           children: [
             SvgPicture.asset('images/Frame.svg'),

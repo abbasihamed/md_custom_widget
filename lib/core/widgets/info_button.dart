@@ -31,22 +31,27 @@ class InfoButton extends StatelessWidget {
         onPressed: onPress,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+          child: Row(
             children: [
-              Text(
-                title,
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    color: isActive ? const Color(0xFFF2994A) :
-                    const Color(0xffAEB4C0)),
-              ),
-              Text(
-                caption,
-                style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    color:
-                        isActive ? const Color(0xff4F4F4F) :
-                        const Color(0xFFBDBDBD)),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        color: isActive
+                            ? const Color(0xFFF2994A)
+                            : const Color(0xffAEB4C0)),
+                  ),
+                  Text(
+                    caption,
+                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        color: isActive
+                            ? const Color(0xff4F4F4F)
+                            : const Color(0xFFBDBDBD)),
+                  ),
+                ],
               ),
             ],
           ),

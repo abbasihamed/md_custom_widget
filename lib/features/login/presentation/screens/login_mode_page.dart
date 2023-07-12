@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:middle_east/core/utils/extension.dart';
 import 'package:middle_east/core/widgets/info_button.dart';
 import 'package:middle_east/core/widgets/md_app_bar.dart';
@@ -34,7 +35,9 @@ class LoginModePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 14),
                 InfoButton(
-                  onPress: () {},
+                  onPress: () {
+                    context.push('/login_phone_id');
+                  },
                   title: 'شماره موبایل و کد ملی',
                   caption: "امکان استفاده از خدمات بانکت",
                   isActive: true,
